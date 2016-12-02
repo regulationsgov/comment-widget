@@ -35,8 +35,8 @@ module.exports = function(grunt) {
         banner: '/*!Built <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: './js/widget.js',
-        dest: './js/widget.min.js'
+        src: './widget.js',
+        dest: './widget.min.js'
       }
     },
 
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
         },
         files: [
          {
-           './test/': ['js/widget.min.js', 'index.html']
+           './test/': './widget.min.js'
          }
        ]
       },
@@ -79,7 +79,7 @@ module.exports = function(grunt) {
        },
        files: [
         {
-          './dist/': ['js/widget.min.js', 'theme/default.min.html']
+          './dist/': './widget.min.js'
         }
       ]
     },
@@ -99,7 +99,7 @@ module.exports = function(grunt) {
       },
       files: [
        {
-         './js/widget.min.js': './js/widget.min.js',
+         './widget.min.js': './widget.min.js',
        }
      ]
     }
@@ -113,8 +113,7 @@ module.exports = function(grunt) {
     },
     prod : {
     files: [
-      { src:'images/*', dest:'dist/' },
-      { src:'theme/default.min.css', dest:'dist/'}
+      { src:'images/*', dest:'dist/' }
       ]
     }
   },
@@ -122,13 +121,13 @@ module.exports = function(grunt) {
    clean: ['dist/*'],
 
    eslint: {
-      target: ['js/widget.js']
+      target: ['./widget.js']
    },
 
    purifycss: {
       options: {},
       target: {
-        src: ['theme/default.html', 'js/widget.js'],
+        src: ['theme/default.html', './widget.js'],
         css: ['theme/default.css'],
         dest: 'tmp/default.pure.css'
       },
@@ -136,7 +135,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['./js/widget.js', './index.html', './theme/default.css', './theme/default.html', './Gruntfile.js'],
+        files: ['./widget.js', './theme/default.css', './theme/default.html', './Gruntfile.js'],
         tasks: ['build', 'buildall'],
         options: {
           spawn: false,
