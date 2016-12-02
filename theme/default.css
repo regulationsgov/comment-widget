@@ -1,0 +1,466 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic);
+
+.regsgov-overlay {
+  background-color: #000;
+  background: rgba(0,0,0,.7);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  overflow: auto; /* Allows scrolling when dialog is longer than page */
+  display: none;
+}
+
+.regsgov-dialog {
+  position: relative;
+  left: 0;
+  margin: 0 10% !important;
+  top: 50px !important; /* gives some room from top of page */
+  bottom: 50px !important;
+  padding: 0!important;
+  box-shadow: 0 3px 3px rgba(0,0,0,.25);
+  box-sizing: border-box;
+  transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  display:none;
+}
+
+.regsgov-content {
+  background: #f7f7f7;
+  position: relative;
+  z-index: 20;
+  border-radius: 5px;
+  color: #333333;
+  height: 100% !important;
+  overflow:visible;
+  /* from body of mockup */
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+
+/*** Block Level Type of selectors ***/
+.regsgov-nowrap {
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  }
+
+.regsgov-alignCenter {
+  text-align:center;
+}
+
+.regsgov-alignRight {
+  text-align: right;
+}
+
+
+/* Modal Content
+
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+/*.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}*/
+
+
+.regsgov-header {
+  background: #f5f4ee;
+  color: #333333;
+  margin: 0;
+  text-align: left;
+  padding: 5px 0 10px 15px;
+  border-radius: 5px 5px 0 0;
+}
+/* Close Button */
+.regsgov-close_button {
+  right: 0;
+  position: absolute;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #555555;
+  margin: 5px 15px 0 0;
+}
+.regsgov-close_button:hover, focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*
+.btn-Close a:link, .btn-Close a:visited {text-decoration: none; color:#555555;}
+.btn-Close a:hover {text-decoration: none; color:#000000;}
+*/
+
+
+
+.regsgov-title {
+  background: #ffffff;
+  color: #125c7c;
+  padding: 35px 65px;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  /*text-align: left;*/
+}
+
+.regsgov-title-confirmation-image {
+  display: none; /* hidden until confirmation state */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0 10px 0;
+}
+
+.regsgov-title-intro {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 1.65em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.regsgov-title__h1 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.65em;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.regsgov-title__h1__a:link, .regsgov-title__h1__a:visited, .regsgov-title__h1__a:active {
+  color: #125c7c;
+  text-decoration: none;
+}
+
+.regsgov-title__h1__a:hover {
+  color: #125c7c;
+  text-decoration: underline;
+}
+
+.regsgov-info {
+  display: none;
+}
+
+.regsgov-warning {
+  background: #fff;
+  color: #cc3333;
+  text-align: left;
+  margin: 0;
+}
+
+.regsgov-warning-border {
+  border-bottom: 3px solid #cc3333;
+}
+
+.regsgov-warning__h2 {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.65em;
+}
+
+.regsgov-warning__ul {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.65em;
+  list-style: disc inside;
+  margin-top: -16px;
+  margin-left: 35px;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.regsgov-warning-arrow-down {
+  width: 0;
+  height: 0;
+  background: transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #cc3333;
+  margin-left: 65px;
+}
+
+.regsgov-warning-icon {
+  position:relative;
+  float: left;
+  top: 15px;
+  margin-right: 10px;
+}
+
+
+
+/* Responsive Options */
+@media screen and (min-width: 641px) {
+  .regsgov-dialog {
+      margin: 0 0 0 0;
+  }
+  .regsgov-title {
+  padding: 35px 65px;
+  }
+  .regsgov-warning {
+  padding: 5px 65px 10px 65px;
+  }
+  .regsgov-form {
+  padding: 25px 65px 0 65px;
+  }
+  .regsgov-form__input, .regsgov-form__textarea {
+  width: 98%;
+  }
+  .regsgov-form__select {
+  width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .regsgov-dialog{
+      margin: 0 0 0 0;
+  }
+  .regsgov-title {
+  padding: 15px;
+  }
+  .regsgov-warning {
+  padding: 10px 15px;
+  }
+  .regsgov-form {
+  padding: 15px 25px 10px 15px;
+  }
+  .regsgov-form__input, .regsgov-form__textarea {
+  width: 92%;
+  }
+  .regsgov-form__select {
+  width: 100%;
+  }
+}
+
+.regsgov-form {
+  background: #f5f4ee;
+  color: #333333;
+  font-size: 15px;
+  text-align: left;
+}
+
+.regsgov-form__p {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.regsgov-icon-left {
+  margin-right: 6px;
+}
+
+.regsgov-icon-right {
+  margin-left: 5px;
+}
+
+.regsgov-fieldArea {
+  margin-top: 10px;
+}
+
+.regsgov-instruction {
+  vertical-align:middle;
+  padding: 0 0 0 8px;
+}
+
+.regsgov-description {
+  float:right;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style:italic;
+  color: #555;
+}
+
+
+/*.regsgov-warningField {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style:italic;
+  color: #cc3333;
+  border: none;
+  margin: 5px 12px;
+}*/
+
+.regsgov-space {
+  height: 1em;
+}
+
+/*** Form elements converted to class selectors ***/
+
+.regsgov-form {
+  margin: 0;
+}
+
+.regsgov-form__h2 {
+  font-family: "Roboto Slab", sans-serif;
+  color: #125c7c;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.65em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.regsgov-form__label {
+  font-family: "Roboto Slab", sans-serif;
+  color: #125c7c;
+}
+
+.regsgov-form__input, .regsgov-form__textarea, .regsgov-form__select, .regsgov-form__checkbox {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+  padding: 10px;
+  margin: 3px 0 0 0;
+}
+
+.regsgov-form__input, .regsgov-form__textarea {
+  width: 98% !important;
+}
+
+.regsgov-form__select {
+  width: 100% !important;
+}
+
+
+/* TODO When we switch to SCSS, we can try to use this to extend to a modifier */
+.regsgov-form__textarea--error {
+border: 1px solid #cc3333;
+}
+
+.regsgov-form__checkbox {
+  width: auto !important;
+}
+
+.regsgov-form-removefile {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  visibility: hidden;
+  margin-left: 10px
+}
+
+.regsgov-form-statement__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #333;
+  position:relative;
+  margin-left:24px; /* original padding-left covered checkbox making uncheckable */
+  display:block;
+  top:-26px;
+}
+
+.regsgov-form__input:focus, .regsgov-form__textarea:focus{
+  border: 1px #125d7c solid;
+  border-radius: 4px;
+}
+/*TODO Need to implement add/remove the --disabled modifier*/
+.regsgov-form__select--disabled {
+  border: 1px solid #999;
+  background: #eee;
+  padding: 5px;
+  margin: 0;
+  color: #333;
+}
+
+
+/* File Upload and Submit button styles */
+
+.regsgov-button {
+  /* Structure */
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.regsgov-button {
+  /*font-family: inherit;*/
+  font-size: 17px;
+  padding: 0.7em 1.7em;
+  color: #fff;
+  background-color: #125c7c;
+  text-decoration: none;
+  border-radius: 4px;
+  visibility: hidden; /* Button enabled after checking agree box */
+}
+
+.regsgov-button-small {
+  font-size: 15px;
+  padding: 0.5em 0.8em;
+  margin: 3px 0;
+}
+
+.regsgov-button-hover,
+.regsgov-button:hover,
+.regsgov-button:focus {
+  background-color: #024460;
+}
+.regsgov-button:focus {
+  outline: 1px;
+}
+
+/* /end file upload and submit button styles */
+
+.regsgov-footer {
+  border-top: 1px solid #dcdcdc;
+  border-radius: 0 0 5px 5px;
+  padding: 35px 20px;
+  background: #ffffff;
+  text-align: center;     /*centers the submit button*/
+}
+
+.regsgov-footer__p {
+  margin: 10px 0 0 0;
+  font-size: 15px;
+  color: #555555;
+  text-align:center;
+}
+
+.regsgov-footer__p__a {
+  color: #555555;
+  text-decoration: none;
+  font-weight: 700;
+}

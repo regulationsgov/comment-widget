@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Regulations.gov Comment Widget Generator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        var apiKey = $("#apiKey").val();
+        var documentId = $("#documentId").val();
+        var front = '<div id=\"regswidget_main\"><div id=\"regswidget_body\"><script type=\"text/javascript\" src=\"js/form.js\"><\/script><script type=\"text/javascript\">(function(){var newForm=new Form(';
+        var end = '); })(); <\/script> </div></div>';
+        var str = front + "\'" + apiKey + "\'" + "," + "\'" + documentId + "\'" + end;
+      $.ajax({
+        url: "index.html",
+        type: "POST",
+        error: function(response) {
+          alert("error");
+        },
+        success: function(response) {
+           $("#output").val(str);
+        }
+      });
+    });
+});
+</script>
+</head>
+
+<body bgcolor="#E6E6FA">
+<p>Welcome to Regulations.gov comment widget code generation page</p>
+  <div id="main">
+    <form action = "index.html" method="POST">
+      API Key: <br>
+      <input type="text" name="apiKey" id="apiKey" required><br>
+      Document ID: <br>
+      <input type="text" name="documentId" id="documentId" required><br>
+    </form>
+
+    <button>Get Code!</button><br><br>
+    <textarea rows="10" cols="45" name="output" id="output"></textarea><br>
+
+  </div>
+</body>
+
+</html>

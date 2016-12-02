@@ -1,0 +1,12 @@
+# Grunt node modules #
+###################
+node_modules/
+test/
+dest
+src
+cwd
+inline/
+theme/default.min.css
+theme/default.min.html
+js/widget.min.js
+info.ini
