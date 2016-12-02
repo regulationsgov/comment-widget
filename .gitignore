@@ -8,5 +8,5 @@ cwd
 inline/
 theme/default.min.css
 theme/default.min.html
-js/widget.min.js
+widget.min.js
 info.ini
