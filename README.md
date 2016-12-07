@@ -29,7 +29,7 @@ Include data attributes to be parsed by widget.min.js. This setup is ideal for c
 
 
 2) Example of form embed code (with options):
-``` javascript
+``` html
   <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <script>  window.onload = function(){
       RegsgovCommentWidget.init({apikey: "DEMO_KEY",
