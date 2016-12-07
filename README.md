@@ -14,12 +14,12 @@ The associated files are hosted via CDN. Embed code is generated once a register
 
 
 Example of modal trigger code:
-```sh
+``` html
   <button id="regsgov-trigger">Comment Now!</button>
 ```
 
 1) Example of form embed code (with data attributes):
-```sh
+``` javascript
   <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <div id="regsgov-widget" data-apikey="DEMO_KEY" data-docid="DARS_FRDOC_0001-0926" style="display: none;"/>
 ```
@@ -29,7 +29,7 @@ Include data attributes to be parsed by widget.min.js. This setup is ideal for c
 
 
 2) Example of form embed code (with options):
-```sh
+``` javascript
   <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <script>  window.onload = function(){
       RegsgovCommentWidget.init({apikey: "DEMO_KEY",
