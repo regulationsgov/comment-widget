@@ -4,7 +4,7 @@ Comment widget that is accessible to the public to embed on webpages.
 ___
 
 ### **Background**
-Currently, the media and other interested parties referring to a Rule/Notice provide the public with  Regulations.gov homepage link instead of linking to the specific comment form page. Providing the interested parties with a widget  will make it easier for the public to submit comments to the specific ruling mentioned in the articles/blog/ other types of  webpages.
+Currently, media channels and other interested parties referring to a Rule/Notice only have the option to provide the public with  Regulations.gov homepage link instead of linking to the specific comment form page. Providing the interested parties with a widget  will make it easier for the public to submit comments to the specific ruling mentioned in the articles, blog or other types of  webpages.
 
 ### **Usage**
 The associated files are hosted via CDN. Embed code is generated once a registered user provides:
@@ -14,23 +14,23 @@ The associated files are hosted via CDN. Embed code is generated once a register
 
 
 Example of modal trigger code:
-```sh
+``` html
   <button id="regsgov-trigger">Comment Now!</button>
 ```
 
 1) Example of form embed code (with data attributes):
-```sh
-  <script src="http://localhost/js/widget.min.js"></script>
+``` javascript
+  <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <div id="regsgov-widget" data-apikey="DEMO_KEY" data-docid="DARS_FRDOC_0001-0926" style="display: none;"/>
 ```
 
 
-Include data attributes to be parsed by widget.min.js. This setup is ideal for clients who have a relatively simple requirements (display one trigger & comment form on page) and whose CMS will allow for data attributes in the DOM.
+Include data attributes to be parsed by widget.min.js. This setup is ideal for clients who have  relatively simple requirements (display one trigger & comment form on page) and whose CMS will allow for data attributes in the DOM.
 
 
 2) Example of form embed code (with options):
-```sh
-  <script src="http://localhost/js/widget.min.js"></script>
+``` javascript
+  <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <script>  window.onload = function(){
       RegsgovCommentWidget.init({apikey: "DEMO_KEY",
       docid: "DARS_FRDOC_0001-0926",
@@ -38,7 +38,7 @@ Include data attributes to be parsed by widget.min.js. This setup is ideal for c
   </script>
 ```
 
-  Include an options object to be parsed by widget.min.js. This setup is ideal for more complex requirements in which, clients need to display more than one unique trigger & comment form per page. Multiple forms referring to different FR documents can be embedded. Although, only modal window can be displayed at a time. This usage is also good for clients whose CMS does not allow for data attributes in the DOM.
+  Include an options object to be parsed by widget.min.js. This setup is ideal for more complex requirements in which, clients need to display more than one unique trigger & comment form per page. Multiple forms referring to different FR documents can be embedded. Although, only one modal window can be displayed at a time. This usage is also good for clients whose CMS does not allow for data attributes in the DOM.
 
 
 ### **Notes on usage**
