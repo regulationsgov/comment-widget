@@ -19,7 +19,7 @@ Example of modal trigger code:
 ```
 
 1) Example of form embed code (with data attributes):
-``` javascript
+``` html
   <script src="https://cdn.jsdelivr.net/regsgov-comment-widget/latest/widget.min.js"></script>
   <div id="regsgov-widget" data-apikey="DEMO_KEY" data-docid="DARS_FRDOC_0001-0926" style="display: none;"/>
 ```
