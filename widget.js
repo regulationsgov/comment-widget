@@ -122,23 +122,24 @@ var FormUtils = {
       var clickedOption = dropdown.options[dropdown.selectedIndex].value;
 
       if (selector.id === 'regsgov-country') {
-        if (!(clickedOption === "United States" || clickedOption === "Canada")){
+        if (!(clickedOption === "United States" || clickedOption === "Canada")) {
           var combo;
           var newCombo;
 
           combo = document.getElementById('regsgov-us_state');
           newCombo = document.createElement('input');
-          newCombo.className = 'regsgov-form__input';
+          newCombo.setAttribute("name", 'us_state');
           newCombo.setAttribute("type", "text");
           newCombo.setAttribute('id', 'regsgov-us_state');
+          newCombo.className = 'regsgov-form__input';
           newCombo.maxLength = 50;
           formDiv.replaceChild(newCombo, combo);
         } else {
           var combo = document.getElementById('regsgov-us_state');
           var newCombo = document.createElement('select');
-          newCombo.className = 'regsgov-form__select';
-          newCombo.setAttribute('id','regsgov-us_state');
           newCombo.setAttribute("name", 'us_state');
+          newCombo.setAttribute('id','regsgov-us_state');
+          newCombo.className = 'regsgov-form__select';
           formDiv.replaceChild(newCombo, combo);
 
           if(clickedOption == "United States"){
