@@ -549,7 +549,7 @@ var FormUtils = {
          type: 'GET',
          error: function(response) { // reporting for 400 and 404 status
            var json = JSON.parse(response.responseText);
-           showDocumentError(json.message);
+           FormUtils.showDocumentError(json.message);
            return false;
          },
          success: function(data) {
