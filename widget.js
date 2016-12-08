@@ -155,8 +155,9 @@ var FormUtils = {
           var newCombo;
 
           newCombo = document.createElement("input");
-          newCombo.className = 'regsgov-form__input';
+          newCombo.setAttribute('name', 'gov_agency');
           newCombo.setAttribute("type", "text");
+          newCombo.className = 'regsgov-form__input';
           newCombo.setAttribute('id','regsgov-gov_agency');
           newCombo.maxLength = 200;
           formDiv.replaceChild(newCombo, combo);
